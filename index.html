@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Egor Ananev">
+    <title>Fitness Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">Fitness <span>Guide</span></div>
+        <nav>
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#calculator">Калькулятор</a></li>
+        <li><a href="videos.html">Видео</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+</nav>
+    </div>
+</header>
+
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section id="home" class="hero">
+    <div class="container home">
+        <h1>Твой путь к идеальному телу начинается здесь и сегодня</h1>
+        <p>Эффективные тренировки • Правильное питание • Расчёт КБЖУ </p>
+        <a href="#calculator" class="btn">Рассчитать свою норму</a>
+    </div>
+</section>
+
+<!-- ==================== PROGRAMS + CALCULATOR ==================== -->
+<section id="calculator">
+    <div class="container">
+        <h2 class="section-title">Программы тренировок и Калькулятор</h2>
+        
+        <div class="programs-calculator-grid">
+            
+            <!-- ЛЕВАЯ ЧАСТЬ — ПРОГРАММЫ -->
+            <div class="programs-section">
+                <h3>Программы тренировок</h3>
+                
+                <div class="program-card" onclick="window.location.href='program.html?type=cardio'">
+                    <h4>🔥 Кардио для жиросжигания</h4>
+                    <p>Лёгкие, но очень эффективные кардио-тренировки, которые помогут быстро привести тело в тонус в сочетании с правильным питанием.</p>
+                    <span class="program-price">от 1490 ₽</span>
+                </div>
+
+                <div class="program-card" onclick="window.location.href='program.html?type=strength'">
+                    <h4>🏋️ Силовые тренировки на массу</h4>
+                    <p>Классическая программа для роста мышц. Подходит для среднего уровня подготовки. Видимый результат уже через 6–8 недель.</p>
+                    <span class="program-price">от 1990 ₽</span>
+                </div>
+
+                <div class="program-card" onclick="window.location.href='program.html?type=home'">
+                    <h4>🏠 Тренировки дома без зала</h4>
+                    <p>Комплекс эффективных домашних тренировок с минимальным оборудованием. Идеально для начинающих и занятых людей.</p>
+                    <span class="program-price">от 1290 ₽</span>
+                </div>
+
+                <div class="program-card" onclick="window.location.href='program.html?type=women'">
+                    <h4>🌸 Женская программа «Тонус»</h4>
+                    <p>Специальная программа для девушек: красивые формы, подтянутое тело, осанка и женственный силуэт.</p>
+                    <span class="program-price">от 1790 ₽</span>
+                </div>
+            </div>
+
+            <!-- ПРАВАЯ ЧАСТЬ — КАЛЬКУЛЯТОР -->
+            <div class="calculator-wrapper">
+                <h3>Калькулятор КБЖУ</h3>
+                <div class="calculator">
+                    <div class="calc-form">
+                        <label for="gender">Пол:</label>
+                        <select id="gender">
+                            <option value="male">Мужской</option>
+                            <option value="female" selected>Женский</option>
+                        </select>
+
+                        <label for="age">Возраст (лет):</label>
+                        <input type="number" id="age" value="30" min="16" max="75">
+
+                        <label for="height">Рост (см):</label>
+                        <input type="number" id="height" value="170" min="140" max="230">
+
+                        <label for="current-weight">Текущий вес (кг):</label>
+                        <input type="number" id="current-weight" value="80" min="35" max="200">
+
+                        <label for="goal">Цель:</label>
+                        <select id="goal">
+                            <option value="loss">Похудение</option>
+                            <option value="maintain" selected>Поддержание</option>
+                            <option value="gain">Набор массы</option>
+                        </select>
+
+                        <label for="activity">Активность:</label>
+                        <select id="activity">
+                            <option value="1.2">Сидячий</option>
+                            <option value="1.375">Лёгкая</option>
+                            <option value="1.55" selected>Умеренная</option>
+                            <option value="1.725">Высокая</option>
+                            <option value="1.9">Экстремальная</option>
+                        </select>
+
+                        <button id="calculate-btn" class="btn">Рассчитать</button>
+                    </div>
+
+                    <div class="calc-result">
+                        <h4>Ваша норма</h4>
+                        <div id="result-message"></div>
+                        <div class="macro-grid">
+                            <div class="macro-item">
+                                <span class="macro-label">Калории</span>
+                                <span class="macro-value" id="calories">0</span><span class="macro-unit"> ккал</span>
+                            </div>
+                            <div class="macro-item">
+                                <span class="macro-label">Белки</span>
+                                <span class="macro-value" id="protein">0</span><span class="macro-unit"> г</span>
+                            </div>
+                            <div class="macro-item">
+                                <span class="macro-label">Жиры</span>
+                                <span class="macro-value" id="fat">0</span><span class="macro-unit"> г</span>
+                            </div>
+                            <div class="macro-item">
+                                <span class="macro-label">Углеводы</span>
+                                <span class="macro-value" id="carbs">0</span><span class="macro-unit"> г</span>
+                            </div>
+                        </div>
+                        <p id="warning" class="warning"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Fitness Guide. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

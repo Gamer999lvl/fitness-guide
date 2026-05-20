@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы клиентов - Fitness Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">Fitness <span>Guide</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html#calculator">Калькулятор</a></li>
+                <li><a href="videos.html">Видео</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="reviews-page">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <p class="reviews-subtitle">Более 340 человек уже изменили своё тело с Fitness Guide</p>
+            <div class="reviews-grid" id="reviews-grid"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Fitness Guide. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+const reviews = [
+    { name: "Александр Цепляев", program: "Силовые тренировки", text: "За 26 недель набрал 6,7 кг качественной массы. Отличная программа!", date: "2 недели назад", rating: 5 },
+    { name: "Мария Корнюхина", program: "Женская программа", text: "Минус 6 кг и очень красивые формы. Программа «Тонус» — лучшее, что я пробовала.", date: "1 месяц назад", rating: 5 },
+    { name: "Дмитрий Навальный", program: "Домашние тренировки", text: "Отличные тренировки дома. Результат виден уже через месяц.", date: "3 недели назад", rating: 4 },
+    { name: "Екатерина Мизулина", program: "Кардио", text: "Скинула 8 кг за 2 месяца. HIIT-тренировки реально работают!", date: "5 дней назад", rating: 5 }
+];
+
+function renderReviews() {
+    const grid = document.getElementById('reviews-grid');
+    grid.innerHTML = reviews.map(r => `
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">${r.name.split(' ').map(n => n[0]).join('').substring(0,2)}</div>
+                <div>
+                    <h4>${r.name}</h4>
+                    <p class="review-program">${r.program}</p>
+                </div>
+                <div class="review-rating">${'★'.repeat(r.rating)}</div>
+            </div>
+            <p class="review-text">"${r.text}"</p>
+            <span class="review-date">${r.date}</span>
+        </div>
+    `).join('');
+}
+
+window.onload = () => {
+    renderReviews();
+};
+</script>
+<script src="script.js"></script>
+</body>
+</html>

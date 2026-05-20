@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полезные видео - Fitness Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">Fitness <span>Guide</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html#calculator">Калькулятор</a></li>
+                <li><a href="videos.html">Видео</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="video-page">
+        <div class="container">
+            <h2 class="section-title">Полезные видео</h2>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="rutube-wrapper">
+                        <iframe src="https://rutube.ru/play/embed/d11568799397c0d6766e48522adbcc26" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                    <h3>Разминка перед упражнениями</h3>
+                    <p class="video-desc">Разогревает мышцы и позволяет минимизировать риск травмы</p>
+                </div>
+
+                <div class="video-card">
+                    <div class="rutube-wrapper">
+                        <iframe src="https://rutube.ru/play/embed/3e049297beb965a589c127ec5cc71af6" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                    <h3>Комплекс упражнений для здоровых плеч</h3>
+                    <p class="video-desc">Сохранит здоровье ваших плеч при выполнении упражнений</p>
+                </div>
+
+                <div class="video-card">
+                    <div class="rutube-wrapper">
+                        <iframe src="https://rutube.ru/play/embed/5cfce0450e185bd7c71bf48758ebbc3a" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                    <h3>Питание для набора массы</h3>
+                    <p class="video-desc">Что нужно есть перед тренировкой и после неё.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Fitness Guide. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    window.addEventListener('message', function(event) {
+        if (event.origin.includes('rutube.ru')) {
+            try {
+                const message = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+                if (message.type === 'player:ready') {
+                    event.source.postMessage(JSON.stringify({
+                        type: 'player:setVolume',
+                        data: { volume: 0.05 }
+                    }), '*');
+                }
+            } catch (e) {}
+        }
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

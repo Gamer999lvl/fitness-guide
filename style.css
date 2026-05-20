@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+main {
+    flex: 1; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== HEADER ==================== */
+header {
+    background: #1a1a2e;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo { font-size: 1.8rem; font-weight: bold; }
+.logo span { color: #00d4ff; }
+
+nav ul { display: flex; list-style: none; gap: 2rem; }
+nav a { color: white; text-decoration: none; font-weight: 500; }
+nav a:hover { color: #00d4ff; }
+
+/* ==================== HERO ==================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px 220px;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 7rem; }
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    display: inline-block;
+    background: #00d4ff;
+    color: #1a1a2e;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+.btn:hover { background: #00b8e0; transform: translateY(-3px); }
+
+/* ==================== SECTION TITLE ==================== */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.4rem;
+    color: #1a1a2e;
+}
+
+/* ==================== PROGRAMS + CALCULATOR ==================== */
+#calculator { padding: 80px 0; background: white; }
+
+.programs-calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 95px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.programs-section h3, .calculator-wrapper h3 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.program-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.09);
+    margin-bottom: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.15);
+}
+.program-card h4 { margin-bottom: 12px; color: #1a1a2e; font-size: 1.25rem; }
+.program-price { color: #00d4ff; font-weight: 700; font-size: 1.1rem; }
+
+.calculator-wrapper {
+    background: #f8f9fa;
+    padding: 35px 40px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-width: 0;
+}
+
+.calculator { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+.calc-form label { display: block; margin: 15px 0 5px; font-weight: 500; }
+.calc-form input, .calc-form select {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;
+}
+#calculate-btn { margin-top: 25px; width: 100%; }
+
+.calc-result {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.macro-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 25px 0; }
+.macro-item {
+    background: white; padding: 15px; border-radius: 10px;
+    text-align: center; box-shadow: 0 2px 8px rgba(20, 11, 11, 0.05);
+}
+.macro-unit { margin-left: 4px; color: #666; font-size: 1rem; }
+
+/* ==================== PROGRAM DETAILS PAGE ==================== */
+.program-page { padding: 40px 0 80px; }
+.back-btn { display: inline-block; margin-bottom: 20px; color: #000000; text-decoration: none; font-weight: 500; }
+.back-btn:hover { text-decoration: underline; }
+
+#index.html { font-size: 20px; }
+
+.program-hero {
+    height: 420px; background-size: cover; background-position: center;
+    border-radius: 20px; display: flex; align-items: center; color: white; margin-bottom: 50px;
+}
+.program-hero h1 { font-size: 3rem; margin: 0; }
+.program-price-big { font-size: 2rem; margin-top: 10px; color: #00d4ff; font-weight: bold; }
+.program-description { font-size: 1.25rem; line-height: 1.7; margin-bottom: 40px; color: #444; }
+
+.program-details { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 50px; }
+.detail-item { background: #f8f9fa; padding: 15px 25px; border-radius: 12px; }
+
+.features-list { list-style: none; margin: 30px 0; }
+.features-list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.1rem; }
+
+.trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0 60px; }
+.trainer-card { background: white; padding: 25px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+.buy-section { text-align: center; margin-top: 60px; }
+
+/* ==================== VIDEO PAGE ==================== */
+.video-page { padding: 60px 0; }
+.video-page .section-title { margin-bottom: 40px; }
+.video-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
+}
+.video-card {
+    background: white; padding: 20px; border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); cursor: default;
+}
+.rutube-wrapper {
+    position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+    border-radius: 10px; margin-bottom: 15px; background: #000;
+}
+.rutube-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-desc { color: #666; font-size: 0.95rem; margin-top: 10px; }
+
+/* ==================== REVIEWS PAGE ==================== */
+.reviews-page { padding: 100px 0; background: #f8f9fa; }
+.reviews-subtitle { text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 50px; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+
+.review-card {
+    background: white; padding: 35px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: 0.3s;
+}
+.review-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+
+.review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.review-avatar {
+    width: 65px; height: 65px; background: #00d4ff; color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: bold;
+}
+.review-rating { color: #ffd700; font-size: 1.8rem; margin-left: auto; }
+.review-program { color: #00d4ff; font-size: 0.95rem; margin-top: 2px; }
+.review-text { font-size: 1.1rem; line-height: 1.65; color: #333; margin-bottom: 20px; }
+.review-date { color: #888; font-size: 0.95rem; }
+
+/* ==================== CONTACTS ==================== */
+.contacts { padding: 100px 0; background: white; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; }
+.contact-card { background: #f8f9fa; padding: 40px; border-radius: 16px; text-align: center; }
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-top: auto; 
+}
