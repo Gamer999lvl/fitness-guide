@@ -56,7 +56,7 @@ nav a:hover { color: #00d4ff; }
 /* ==================== HERO ==================== */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600') center/cover no-repeat;
+                url('hero-bg.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 100px 20px 220px;
